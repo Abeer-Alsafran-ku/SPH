@@ -63,9 +63,9 @@ for i in range(len(w_i)):
 vlcty_of_bndry = 2* va - upr[1]/lowr[1]
 wall_pressure_Pw = (calc_P_W(p,w_i) + g*calc_r_W(rho,r,w_i)) / lowr[1] 
 print(wall_pressure_Pw)
-kai = 0.05*p
-wall_dnsty_rho_W = 1
-# wall_dnsty_rho_W = rho * math.pow(((wall_pressure_Pw[1]-kai)/p)+1,1/gama) 
+kai = 0.05*P_0
+#wall_dnsty_rho_W = 1
+wall_dnsty_rho_W = rho * math.pow(((wall_pressure_Pw[1]-kai)/P_0)+1,1/gama) 
 ############ End boundry condition #####
 ############### step 4 ##################
 '''vi_n_1 = vi_prime - (delta P / rho)i->n+1 * delta_t '''
