@@ -13,23 +13,23 @@ rho_0 = 1
 P_0 = rho_0 * c*c/gama
 C_cfl = 1.15
 dt = C_cfl * h / c  # delta time from CFL condition
-height = 3
-width = 10
+height = 2
+width = 2
 k=75
 no_of_layers = 2
 kai = X =500000
 n = 3600
 # n = math.ceil(height * width / math.pi / h**2)  # Number of particles [2D]
-rho = 1000  # constant rho
+rho_init = 1  # constant rho
 mu = 0.0010016  # at temp 20
-nu = mu / rho  # kinematic viscosity
+nu = mu / rho_init  # kinematic viscosity
 
 V_in_lam = 0
 # Umax = V_in_lam = 2300 * mu / (height * rho)  # laminar flow velocity
 v0 = np.zeros((k,3))
 v0[:,0][0] = V_in_lam # v0 =  np.array([V_in_lam, 0, 0]) # initial velocity
 fg = -g * np.array([0, 1, 0])  # gravity force vector
-total_mass_of_the_system = rho * height * width
+total_mass_of_the_system = rho_init * height * width
 mj = total_mass_of_the_system / n  # mass of each particle
 t=0
 current_step =0
