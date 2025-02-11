@@ -19,8 +19,12 @@ def calc_rj(r, k):
 
 def calc_rij(r,rj ,k):
     rij = np.zeros(k) 
-    for i in range(k):
-        rij[i] = r[:,1][i] - rj[:,1][i]
+    for i in range(n):
+        for j in range(k):
+            if r[:,1][i] ==  rj[:,1][j]: 
+                rij[i][j]=1
+            else:
+                rij[i][j] = r[:,1][i] - rj[:,1][j]
     return rij
 
 def get_neighbours_indx(point ,coordinates,k):
