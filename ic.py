@@ -5,7 +5,12 @@ import numpy as np
 ############### Initial Conditions ######################
 g = 9.81  # gravity constant
 h = 0.01  # smoothing length
-c = 1500  # Speed of sound in water
+Umax = 1
+c = 10*Umax  # Speed of sound in water
+# c = 1500  # Speed of sound in water
+gama=7
+rho_0 = 1
+P_0 = rho_0 * c*c/gama
 C_cfl = 1.15
 dt = C_cfl * h / c  # delta time from CFL condition
 height = 3
@@ -18,7 +23,7 @@ n = 3600
 rho = 1000  # constant rho
 mu = 0.0010016  # at temp 20
 nu = mu / rho  # kinematic viscosity
-Umax = 1
+
 V_in_lam = 0
 # Umax = V_in_lam = 2300 * mu / (height * rho)  # laminar flow velocity
 v0 = np.zeros((k,3))
@@ -28,7 +33,7 @@ total_mass_of_the_system = rho * height * width
 mj = total_mass_of_the_system / n  # mass of each particle
 t=0
 current_step =0
-gama=7
+
 eta = 0.01 * h
 length_L = 2
 velocity_of_lid_U = 1
