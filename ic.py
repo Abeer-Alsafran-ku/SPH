@@ -53,13 +53,16 @@ vi = v0.copy()  # initial velocity
 vij = np.zeros((n, 3))  # For storing velocity differences
 # Initial coordinates at time = 0
 delta_y = (height - 4 * h) / (n * 2) # the y distance between the particles 
+dx = delta_y
 coordinates = np.zeros((n, 3))  # initialize particles' positions in 3D space
 for i in range(n // 2):  # create the initial coordinates
     if i == 0:
-        coordinates[i] = np.array([0, delta_y * i, 0])
+        coordinates[i] = np.array([i*dx, delta_y * i, 0])
     else:
-        coordinates[i] = np.array([0, delta_y * i, 0])
+        coordinates[i] = np.array([i*dx, delta_y * i, 0])
 for i in range(n // 2, n):  # create the initial coordinates
     coordinates[i] = np.array([0, -delta_y * (i - n // 2), 0])
+
+print(coordinates)
 # print(coordinates)
 # ############### End of Initial Conditions ################
