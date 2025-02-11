@@ -81,7 +81,7 @@ def calc_W(r,h): # this function will calculate W: smoothing particle for a spec
     for i in range(k):
         r = np.append(r,i)
         s = np.linalg.norm(r[i]) / h # = q
-        if s >=0 and s <=1:
+        if s >=0 and s <=2:
             w[:,1][i] = 15 / 7 / math.pi / math.pow(h,2) * (2/3 - 9/8 * math.pow(s,2) + 19/ 24 * math.pow(s,3) - 5/32 * math.pow(s,4))
         else: # s is not in the range
             w[:,1][i] = 0
@@ -121,7 +121,7 @@ def calc_delta_p_rho(mj,rho_i,rho_j,p,rij,del_w ,eta):
     p_rho = np.zeros((k,3))
     for i in range(k):
         rho = rho_i[:,1][i] + rho_j[:,1][i]
-        p_rho[:,1][i] = mj * 8/math.pow(rho,2) * p * np.dot(rij[i] , del_w[i])/math.pow(math.fabs(rij[i]),2) + math.pow(eta,2)
+        p_rho[:,1][i] = (mj * 8/math.pow(rho,2)) * p * np.dot(rij[i] , del_w[i])/math.pow(math.fabs(rij[i]),2) + math.pow(eta,2)
     return p_rho
 
 def step_4_i(vi_prime , del_p_rho , delta_t):
