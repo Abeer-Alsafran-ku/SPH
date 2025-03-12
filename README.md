@@ -5,4 +5,7 @@
   - ### IC : Initial Condition -> The initial static conditions.
   - ### DEFs: Definition of the functions -> The formulas and the equation.
   - ### Simulation: The main program.
-  - ### Plot: In order to save the time of execution and take the already cached values saved on `.npy` format and plot it. 
+  - ### Plot: In order to save the time of execution and take the already cached values saved on `.npy` format and plot it.
+
+# Final result: 
+- ![screenshot](imageFolder/screenshot.png)
