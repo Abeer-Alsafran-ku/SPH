@@ -8,4 +8,5 @@
   - ### Plot: In order to save the time of execution and take the already cached values saved on `.npy` format and plot it.
 
 # Final result: 
-- <img src="Screenshot 2025-03-09 125015.png" alt="")
+<img src="Screenshot 2025-03-09 125015.png" alt="">
+<img src="Screenshot 2025-03-09 110651.png" alt="">
